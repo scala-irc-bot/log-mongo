@@ -228,4 +228,48 @@ class LogMongoBot(
   override def onMessage(message: Message) = {
     collection.insert(message)
   }
+
+  override def onPrivateMessage(message: PrivateMessage) = {
+    collection.insert(message)
+  }
+
+  override def onNotice(notice: Notice) = {
+    collection.insert(notice)
+  }
+
+  override def onInvite(invite: Invite) = {
+    collection.insert(invite)
+  }
+
+  override def onJoin(join: Join) = {
+    collection.insert(join)
+  }
+
+  override def onKick(kick: Kick) = {
+    collection.insert(kick)
+  }
+
+  override def onMode(mode: Mode) = {
+    collection.insert(mode)
+  }
+
+  override def onTopic(topic: Topic) = {
+    collection.insert(topic)
+  }
+
+  override def onNickChange(nickChange: NickChange) = {
+    collection.insert(nickChange)
+  }
+
+  override def onOp(op: Op) = {
+    collection.insert(op)
+  }
+
+  override def onPart(part: Part) = {
+    collection.insert(part)
+  }
+
+  override def onQuit(quit: Quit) = {
+    collection.insert(quit)
+  }
 }
