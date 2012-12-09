@@ -225,51 +225,51 @@ class LogMongoBot(
     collection.find(DBObject("channel" -> channel)).sort(DBObject("date" -> -1)).map(convertDBObjectToEvent).toSeq
   }
 
-  override def onMessage(message: Message) = {
+  override def onMessage(client: Client, message: Message) = {
     collection.insert(message)
   }
 
-  override def onPrivateMessage(message: PrivateMessage) = {
+  override def onPrivateMessage(client: Client, message: PrivateMessage) = {
     collection.insert(message)
   }
 
-  override def onNotice(notice: Notice) = {
+  override def onNotice(client: Client, notice: Notice) = {
     collection.insert(notice)
   }
 
-  override def onInvite(invite: Invite) = {
+  override def onInvite(client: Client, invite: Invite) = {
     collection.insert(invite)
   }
 
-  override def onJoin(join: Join) = {
+  override def onJoin(client: Client, join: Join) = {
     collection.insert(join)
   }
 
-  override def onKick(kick: Kick) = {
+  override def onKick(client: Client, kick: Kick) = {
     collection.insert(kick)
   }
 
-  override def onMode(mode: Mode) = {
+  override def onMode(client: Client, mode: Mode) = {
     collection.insert(mode)
   }
 
-  override def onTopic(topic: Topic) = {
+  override def onTopic(client: Client, topic: Topic) = {
     collection.insert(topic)
   }
 
-  override def onNickChange(nickChange: NickChange) = {
+  override def onNickChange(client: Client, nickChange: NickChange) = {
     collection.insert(nickChange)
   }
 
-  override def onOp(op: Op) = {
+  override def onOp(client: Client, op: Op) = {
     collection.insert(op)
   }
 
-  override def onPart(part: Part) = {
+  override def onPart(client: Client, part: Part) = {
     collection.insert(part)
   }
 
-  override def onQuit(quit: Quit) = {
+  override def onQuit(client: Client, quit: Quit) = {
     collection.insert(quit)
   }
 }
